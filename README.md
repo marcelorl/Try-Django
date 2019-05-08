@@ -9,9 +9,9 @@ I have just made a little change, instead of using venv I use docker.
 If you want to start a new project:
 
 ```
-$ docker-compose run api django-admin startproject newproject ./src
+$ docker-compose run api django-admin startproject trydjango ./src
 $ docker-compose run api python src/manage.py migrate
 $ docker-compose run api python src/manage.py createsuperuser # u: cfe p: test1234
-$ docker-compose run api python src/manage.py startapp products
-$ docker-compose run api python src/manage.py makemigrations # not working yet
+$ docker-compose run api /bin/sh -c 'cd /app/src && python manage.py startapp products'
+$ docker-compose run api python src/manage.py makemigrations
 ```
